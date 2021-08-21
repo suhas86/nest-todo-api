@@ -1,0 +1,13 @@
+### Create todos
+POST http://localhost:3000/todos
+content-type: application/json
+
+{
+  
+}
+
+### Get todos
+GET http://localhost:3000/todos
+
+### Update todos status
+PATCH http://localhost:3000/todos/1
