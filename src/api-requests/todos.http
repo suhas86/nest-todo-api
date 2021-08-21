@@ -3,11 +3,15 @@ POST http://localhost:3000/todos
 content-type: application/json
 
 {
-  
+  "todo":"Second todo",
+  "description":"Second todo description"
 }
 
 ### Get todos
 GET http://localhost:3000/todos
+
+### Get single todo
+GET http://localhost:3000/todos/1
 
 ### Update todos status
 PATCH http://localhost:3000/todos/1
