@@ -1,13 +1,14 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import { CreateTodoDto } from './dtos/create-todo.dto';
 import { Todos } from './todos.entity';
 
 @Injectable()
 export class TodosService {
   constructor(@InjectRepository(Todos) private repo: Repository<Todos>) {}
 
-  create(body: any) {
+  create(body: CreateTodoDto) {
     /** We create todo object first and then save the record to our database */
     const todo = this.repo.create(body);
     return this.repo.save(todo);
@@ -18,7 +19,7 @@ export class TodosService {
     return this.repo.find();
   }
 
-  findOne(id: number) {
+  findOne(id: string) {
     /** Repositroy findOne() method will return single record that matches input
      * Where as find() will return all records that matches our input
      */
@@ -26,7 +27,7 @@ export class TodosService {
     return this.repo.findOne(id);
   }
 
-  async update(id: number) {
+  async update(id: string) {
     /**
      * Get the record
      * Check if record exists

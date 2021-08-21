@@ -14,4 +14,4 @@ GET http://localhost:3000/todos
 GET http://localhost:3000/todos/1
 
 ### Update todos status
-PATCH http://localhost:3000/todos/1
+PATCH http://localhost:3000/todos/2
